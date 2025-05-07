@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="color-scheme" content="dark light" />
+    <title>Family Website</title>
+    <link rel="stylesheet" type="text/css" media="all" href="famtxt.css" />
+</head>
+<body role="main">
+<header class="page-header" role="banner">
+    <h1>A Family story</h1>
+    <form>
+        <fieldset class="tamedots">
+            <legend>Mode:</legend>
+            <label><input type="radio" name="palette" id="light"> Light</label>
+            <label><input type="radio" name="palette" id="dark"> Dark</label>
+        </fieldset>
+    </form>
+</header>
+<article class="centered">
+    <h2>Petifer and Potawatomi</h2>
+    <p>
+        Around 1700 the Beaver Wars had ended and the Potawatomi, by then incorporating various tribal refugees and French traders, 
+        spread around the southern end of Lake Michigan. Population from 4,000 to 8,000.
+    </p>
+    <p>
+        1833- Treaty of Chicago starts taking that land from them. A number of them go to NW Missouri, the Platte “territory”, 
+        until 1837 when they go on to SW Iowa. However they disliked that area and were allowed to go to eastern Kansas along the Osage River, 
+        at first simply the ones from Indiana were sent there, but some from Michigan went also. There they all settled into agriculture. 
+        Others were up near Topeka with the Kickapoo, who would mostly become the Prairie band. Over the next two decades around 6000 are documented going west, 
+        with up to a third heading back east at some point.
+    </p>
+    <p>
+        It seems quotes are highly neglected in code so should make it clear in surrounding text like "Here is a quote:"
+    </p>
+    <blockquote>
+        <p><!-- not sure if needed but cleaner when longer text-->
+            The English "Potawatomi" is derived from the Ojibwe Boodewaadamii(g) (syncoped in the Ottawa as Boodewaadmii(g)). 
+            The Potawatomi name for themselves (autonym) is Bodéwadmi (without syncope: Bodéwademi; plural: Bodéwadmik), a cognate of the Ojibwe form. 
+            Their name means "those who tend the hearth-fire," which refers to the hearth of the Council of Three Fires. 
+        </p>
+        <p>
+            The word comes from "to tend the hearth-fire," which is bodewadm (without syncope: bodewadem) in the Potawatomi language; 
+            the Ojibwe and Ottawa forms are boodawaadam and boodwaadam, respectively. 
+        </p>
+    </blockquote>
+    <p>
+        And then we just have like "So and so, url goes here if exists, etc."
+    </p>
+    <p>
+        So for the tree part at first I was thinking grid, which makes sense if doing anything other than basic splitting pedigree. 
+        BUT if you are doing the simple 1-2-4-8 then flex "justify space between" might work. 
+        Worth a try to see how it looks! Just have to remember to have an outer box, then a box for each generation. 
+    </p>
+</article>
+<article class="spanner1">
+    <section class="generation1">
+        <div class="card1">
+            <p>John Q Public</p>
+            <p>1900-2000</p>
+        </div>
+    </section>
+    <section class="generation1">
+        <div class="card1">
+            <p>Joel Q Public</p>
+            <p>1900-2000</p>
+        </div>
+        <div class="card1">
+            <p>Eileen Dover</p>
+            <p>1900-2000</p>
+        </div>
+    </section>
+    <section class="generation1">
+        <div class="card1">
+            <p>Joseph Q Public</p>
+            <p>1900-2000</p>
+        </div>
+        <div class="card1">
+            <p>Anna Conda</p>
+            <p>1900-2000</p>
+        </div>
+        <div class="card1">
+            <p>Ben Dover</p>
+            <p>1900-2000</p>
+        </div>
+        <div class="card1">
+            <p>Jane Plain</p>
+            <p>1900-2000</p>
+        </div>
+    </section>
+</article>
+<article class="centered">
+    <p>
+        Uhhhhhhh. This is 90 degrees from what I planned! It WORKS, in a way. BUT I was thinking to have it grow to the right. HMM. 
+        Is this better or worse than that plan? 
+    </p>
+    <p>
+        Using the "flex-direction: column" just turned the whole entire thing into a column. 
+        After some pondering I realize I did not put css for each generation section to be like ||| 
+        and doing so makes it nice, everything is where I expected. 
+    </p>
+</article>
+<article class="spanner2">
+    <section class="generation2">
+        <div class="card1">
+            <p>John Q Public</p>
+            <p>1900-2000</p>
+        </div>
+    </section>
+    <section class="generation2">
+        <div class="card1">
+            <p>Joel Q Public</p>
+            <p>1900-2000</p>
+        </div>
+        <div class="card1">
+            <p>Eileen Dover</p>
+            <p>1900-2000</p>
+        </div>
+    </section>
+    <section class="generation2">
+        <div class="card1">
+            <p>Joseph Q Public</p>
+            <p>1900-2000</p>
+        </div>
+        <div class="card1">
+            <p>Anna Conda</p>
+            <p>1900-2000</p>
+        </div>
+        <div class="card1">
+            <p>Ben Dover</p>
+            <p>1900-2000</p>
+        </div>
+        <div class="card1">
+            <p>Jane Plain</p>
+            <p>1900-2000</p>
+        </div>
+    </section>
+</article>
+<article class="centered">
+    <p>
+        Probably need to test this more but let's go all in and make a 4 col version. 
+        This WILL require CAREFUL copying/adding in real info, but I'll just use placeholders to see.
+    </p>
+    <p>
+        OK cool so let's use a REAL tree with missing people. 
+        Flexbox lets me just use the same class on each generation column without needing to add another class to handle each card. 
+    </p>
+</article>
+<article class="spanner4">
+    <section class="generation2">
+        <div class="card1">
+            <p>Pat Petifer</p>
+            <p>1901-1978</p>
+        </div>
+    </section>
+    <section class="generation2">
+        <div class="card1">
+            <p>George Sherman Petifer</p>
+            <p>1869-1939</p>
+        </div>
+        <div class="card1">
+            <p>Sarah Dumas</p>
+            <p>1873-1951</p>
+        </div>
+    </section>
+    <section class="generation2">
+        <div class="card1">
+            <p>George Petifer</p>
+            <p>1838?-1879</p>
+        </div>
+        <div class="card1">
+            <p>Elizabeth </p>
+            <p>c.1842-1879</p>
+        </div>
+        <div class="card1">
+            <p>?</p>
+            <p>1800s</p>
+        </div>
+        <div class="card1">
+            <p>?</p>
+            <p>1800s</p>
+        </div>
+    </section>
+    <section class="generation2">
+        <div class="card1">
+            <p>? Petifer</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1">
+            <p>?</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1">
+            <p>George Munin</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1">
+            <p>Charlotte LeTendre</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1">
+            <p>??</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1">
+            <p>??</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1">
+            <p>??</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1">
+            <p>??</p>
+            <p>18??-18??</p>
+        </div>
+    </section>
+</article>
+
+<article class="centered">
+    <p>
+        OK I looked at Wikitree and how they do things and I saw something obvious and after some messing about this looks best so far. 
+        The whitespace is out of balance but the way the boxes join makes descent obvious enough I can skip making lines for now. 
+        Also i can fill some of that with text. Great-granpadrents don't have room, but that's at the limit for width anyways- 
+        I want to accommodate 12 inch laptops, maybe tablets, even if phones are too small- 
+        so a 3 generation block for each person would work fine. 
+    </p>
+</article>
+<div class="spanner4">
+    <section class="generation5">
+        <div class="card1 person">
+            <p>Pat Petifer</p>
+            <p>1901-1978</p>
+        </div>
+    </section>
+    <section class="generation5">
+        <div class="card1 parents">
+            <p>George Sherman Petifer</p>
+            <p>1869-1939</p>
+        </div>
+        <div class="card1 parents">
+            <p>Sarah Dumas</p>
+            <p>1873-1951</p>
+        </div>
+    </section>
+    <section class="generation5">
+        <div class="card1 grandparents">
+            <p>George Petifer</p>
+            <p>1838?-1879</p>
+        </div>
+        <div class="card1 grandparents">
+            <p>Elizabeth </p>
+            <p>c.1842-1879</p>
+        </div>
+        <div class="card1 grandparents">
+            <p>?</p>
+            <p>1800s</p>
+        </div>
+        <div class="card1 grandparents">
+            <p>?</p>
+            <p>1800s</p>
+        </div>
+    </section>
+    <section class="generation5">
+        <div class="card1 ggp">
+            <p>? Petifer</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1 ggp">
+            <p>?</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1 ggp">
+            <p>George Munin</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1 ggp">
+            <p>Charlotte LeTendre</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1 ggp">
+            <p>??</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1 ggp">
+            <p>??</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1 ggp">
+            <p>??</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1 ggp">
+            <p>??</p>
+            <p>18??-18??</p>
+        </div>
+    </section>
+</div>
+<div class="spanner3">
+    <section class="generation5">
+        <div class="card1 person">
+            <p>George Sherman Petifer</p>
+            <p>1869-1939</p>
+        </div>
+    </section>
+    <section class="generation5">
+        <div class="card1 parents">
+            <p>George W. Petifer</p>
+            <p>1838?-1879</p>
+        </div>
+        <div class="card1 parents">
+            <p>Elizabeth </p>
+            <p>c.1842-1879</p>
+        </div>
+    </section>
+    <section class="generation5">
+        <div class="card1 grandparents">
+            <p>George? Petifer</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1 grandparents">
+            <p>?</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1 grandparents">
+            <p>George Munin?</p>
+            <p>18??-18??</p>
+        </div>
+        <div class="card1 grandparents">
+            <p>Charlotte LeTendre?</p>
+            <p>18??-18??</p>
+        </div>
+    </section>
+</div>
+<article class="centered">
+    <h2>Table test</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Source</th>
+                <th>Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1863</td>
+                <td>Rolls</td>
+                <td>Residence Shawnee County, Petifer Geo., Age July 1, 1863: 25, white, farmer, married, place of birth Illinois.</td>
+            </tr>
+            <tr>
+                <td>1873</td>
+                <td>Newspaper</td>
+                <td>George Petifer returns to Kansas to visit.</td>
+            </tr>
+            <tr>
+                <td>1878</td>
+                <td>Newspaper</td>
+                <td>George kills cattle rustlers!</td>
+            </tr>
+        </tbody>
+    </table>
+</article>
+<article class="centered">
+    <h2>Some padding to scroll</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Adipisci ullam inventore nisi eius doloremque, facere perferendis suscipit non sit, labore quis amet id et illo, recusandae odit? 
+        Quisquam, omnis veritatis?
+    </p>
+</article>
+</body>
+</html>

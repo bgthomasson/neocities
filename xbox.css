@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'profontwindowsregular';
+    src: url('ProFontWindows-webfont.eot');
+    src: url('ProFontWindows-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ProFontWindows-webfont.woff2') format('woff2'),
+         url('ProFontWindows-webfont.woff') format('woff'),
+         url('ProFontWindows-webfont.ttf') format('truetype'),
+         url('ProFontWindows-webfont.svg#profontwindowsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --white: rgb(245, 244, 244);
+    --charcoal: rgb(21, 24, 20);
+    --darkness:rgb(1, 18, 0);
+    --brand-green:rgb(34, 121, 10);
+    --olive1:rgb(140, 168, 0);
+    --yellow1:rgb(250, 252, 78);
+    --shadow-dark1: rgb(2, 49, 0);
+    --shadow-dark2: rgb(88, 112, 81);
+    --shadow-lite1: rgb(64, 165, 61);
+    --shadow-lite2: rgb(179, 216, 168);
+}
+
+html {
+	font-size: 1rem;
+    font-family: 'Noto Sans', Candara, sans-serif;
+    line-height: 1.5; 
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+.og-body {
+    background-color: var(--darkness);
+    color: var(--white);
+}
+.x360-body {
+    background-color: silver;
+    background: linear-gradient(90deg, silver, var(--white), silver);
+    color: var(--charcoal);
+}
+
+header {
+    margin-bottom: 6em;
+    text-align: center;
+    color: var(--brand-green);
+}
+.og-header{
+    border: 2px solid var(--olive1);
+}
+.x360-header {
+    border: 1px solid var(--brand-green);
+    background-color: var(--white);
+}
+
+h1, 
+h2 {
+    font-family: 'profontwindowsregular', 'Fira Code', Consolas, monospace;
+    text-wrap: balance;
+    color: var(--brand-green);
+}
+
+main {
+    width: min(70em, 100%);
+    margin-inline: auto;
+}
+
+.capsule {
+    margin-bottom: 6em;
+
+    @media screen and (width > 66em) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+}
+.og-cap {
+    border: 2px solid var(--olive1);
+    border-radius: 1em 2em 0 1em;
+    box-shadow: 0 0 1em var(--shadow-dark1), 0 0 3em var(--shadow-dark2);
+    background-color: var(--charcoal);
+}
+.x360-cap {
+    border: 2px solid var(--shadow-lite1);
+    border-radius: 2em;
+    box-shadow: 0 0 1em var(--shadow-lite1), 0 0 3em var(--shadow-lite2);
+    background-color: var(--white);
+}
+
+article {
+    padding: 1em;
+}
+
+p {
+    font-variant-numeric: oldstyle-nums;
+    max-width: 64em; 
+    text-wrap: pretty;
+}
+
+img, 
+picture, 
+svg, 
+video {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+
+.circle-icon {
+    clip-path: circle(50%);
+    text-align: center;
+}
+
+footer {
+    margin: 9em 0;
+}
+
+.og-footer {
+    background-color: var(--darkness);
+    border: 2px solid var(--olive1);
+    transition: box-shadow 0.3s;
+}
+.og-footer:hover {
+    box-shadow: 0 0 1em var(--shadow-dark1), 0 0 3em var(--shadow-dark2);
+}
+
+.x360-footer {
+    background-color: var(--white);
+    border: 2px solid var(--olive1);
+    transition: box-shadow 0.3s;
+}
+.x360-footer:hover {
+    box-shadow: 0 0 1em var(--shadow-lite1), 0 0 3em var(--shadow-lite2);
+}
+
+.bottomnav {
+    display: flex;
+    align-items: center; 
+    gap: 3em;
+    flex-direction: column; 
+
+    @media screen and (width > 66em) {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.og-link {
+    border: 2px solid var(--olive1);
+    border-radius: 6px 12px 0 6px;
+    padding: .25em .5em;
+}
+.og-link:hover {
+    border-color: var(--yellow1);
+}
+
+.x360-link {
+    border: 2px solid var(--brand-green);
+    border-radius: 6px;
+    padding: .25em .5em;
+}
+.x360-link:hover {
+    border-color: var(--shadow-lite2);
+}
+

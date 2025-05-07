@@ -1,0 +1,100 @@
+/* Global styles ----------------------------------------------------------- */
+:root {
+    --font-sans: Cantarell, sans-serif;
+    --font-serif: 'IBM Plex Serif', Merriweather, serif;
+    --font-mono: 'Oxygen Mono', 'Fira Code', Consolas, monospace; 
+    --font-script: Calligraffiti, 'Happy Monkey', script;
+}
+
+@media (prefers-color-scheme: light){
+    body {
+        --wallpaper: hsl(42, 29%, 93%);
+        --newspaper: hsl(51, 3%, 98%);
+        --ink: hsl(0, 0%, 6%);
+        --links: hsl(240, 100%, 50%);
+        --banner: hsl(166, 47%, 86%);
+        --border-dull: hsl(28, 16%, 23%);
+        --border-bold: hsl(39, 94%, 51%);
+    }
+}
+@media (prefers-color-scheme: dark){
+    body {
+        --wallpaper: hsl(0, 0%, 15%);
+        --newspaper: hsl(0, 0%, 10%);
+        --ink: hsl(0, 0%, 95%);
+        --links: hsl(190, 100%, 50%);
+        --banner: hsl(166, 100%, 6%);
+        --border-dull: hsl(26, 24%, 59%);
+        --border-bold: hsl(39, 74%, 72%);
+    }
+}
+
+html {
+    color: var(--ink);
+	font-size: 1rem;
+    font-family: var(--font-sans);
+    color-scheme: dark light;
+}
+
+body {
+    background-color: var(--wallpaper);
+    font-size: 1.1em;
+    line-height: 1.5; 
+    margin: 0; 
+}
+
+.page-header {
+    margin-bottom: 3em;
+    background-color: var(--bg2);
+    border: 3px solid var(--border1);
+}
+
+.fancy-title {
+    font-family: var(--font-script);
+    text-align: center;
+}
+
+main {
+    margin-bottom: 8em;
+}
+
+.banner {
+    background-color: var(--banner);
+    border: solid var(--border-bold) 2px;
+    margin-bottom: 1em;
+}
+
+article {
+    background-color: var(--newspaper);
+    padding-bottom: 3em; 
+    text-align: center;
+}
+
+img, 
+picture {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+
+.page-footer {
+    margin: 4em 0;
+    background-color: var(--bg1);
+    border: 3px solid var(--border1);
+    container-name: navbox;
+    container-type: inline-size;
+}
+
+.bottomnav {
+    display: flex;
+    align-items: center; 
+    gap: 3em;
+    flex-direction: column; 
+
+    @container navbox (width > 66em) {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+

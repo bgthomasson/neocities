@@ -1,0 +1,75 @@
+:root {
+    --hex-width: 6rem;
+    --hex-height: 5rem;
+    --border-size: 0.0625rem;
+}
+
+body {
+    margin: 0;
+    color: black;
+    font-family: 'Fira Code', Consolas, monospace;
+    font-size: 1rem;
+    background-color: goldenrod;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    display: flex;
+    align-items: center;
+}
+
+.row:not(:first-child) {
+    /* Hex width * 25% (clipped part) - border for overlap */
+    margin-left: calc(-0.25 * var(--hex-width) - var(--border-size));
+}
+
+.hex,
+.hex::before {
+    clip-path: polygon(
+        25% 0%,
+        75% 0%,
+        100% 50%,
+        75% 100%,
+        25% 100%,
+        0% 50%
+    ); /* Use: https://bennettfeely.com/clippy/ */
+}
+
+.hex {
+    width: var(--hex-width);
+    height: var(--hex-height);
+
+    &:not(:first-child) {
+        margin-top: calc(-1 * var(--border-size));
+    }
+}
+
+/* Used for aligning the grid */
+.hex:not(.hidden) {
+    position: relative;
+    background: #c7b198; /* Border color */
+
+    /* Pseudo element for the inner hex because borders don’t work on clipped elements */
+    &::before {
+        content: "";
+        position: absolute;
+        background: #dfd3c3; /* Hex color */
+        inset: var(--border-size);
+    }
+}
+
+.hex:not(.hidden):hover {
+    background: #6e8c91; /* Border color */
+
+    /* Pseudo element for the inner hex because borders don’t work on clipped elements */
+    &::before {
+        content: "";
+        background: #9bdbeb; /* Hex color */
+    }
+}
+
+/* ?? how to hide or reveal via clicking */
+/* see also https://css-tricks.com/hexagons-and-beyond-flexible-responsive-grid-patterns-sans-media-queries/ */

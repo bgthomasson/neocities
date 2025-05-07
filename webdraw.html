@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US"> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="color-scheme" content="dark light" />
+    <title>Silly Little Website</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="all" href="neocity.css" />
+</head>
+<body>
+<main role="main" class="paint-main">
+    <canvas id="canvas" width="1024" height="768">Fallback text for the web painter tool.</canvas>
+    <div class="paint-tools">
+
+        <input type="range" id="brush-size" min="1" max="50" value="5">
+        <span id="bs-output"></span>
+
+        <input type="color" id="color-picker">
+        <button id="pen">Pen</button>
+        <button id="eraser">Eraser</button>
+        <button id="clear-canvas">Clear</button>
+    </div>
+    <article class="paint-notes">
+        <p>This should be mostly obvious, the line with the dot is to change brush size, and the black box is the color picker.</p>
+        <p>
+            What is very mysterious is that I have an issue with the cursor matching up with the result. 
+            "Is it something to do with input values?" I thought- but then! 
+            I notcied when I scrolled up in down THAT made the location change!?!?! 
+            Like if it was all the way to the top it was under the cursor properly! 
+            But the further down I scrolled the page, the higher the output appeared above it!?!?! 
+            It has something to do with the canvas offset since deleting the existing details makes it even worse, lol. 
+            Changing the canvas width and height has no noticible effect. 
+            "The HTMLElement.offsetTop read-only property returns the distance from the outer border of the current element 
+            (including its margin) to the top padding edge of the offsetParent, the closest positioned ancestor element." 
+        </p>
+        <p>How to save as PNG?</p>
+        <p>How to make a rectangle tool since strokeRect() exists?</p>
+        <p>That might be hard, what about a paint bucket with the fill() function?</p>
+    </article>
+</main>
+<footer class="page-footer">
+    <h1 class="fancy-title">A silly little drawing tool</h1>
+    <nav class="bottomnav" role="navigation">
+        <p class="littlelink"><a href="code.html">Steal This Code!</a></p>
+        <p class="littlelink"><a href="links.html">Fun and Games</a></p>
+        <p class="littlelink"><a href="gallery.html">Tiny Gallery</a></p>
+        <p class="littlelink"><a href="xbox.html">Xbox</a></p>
+        <p class="littlelink"><a href="xbox360.html">Xbox 360</a></p>
+    </nav>
+</footer>
+<script src="js/webdraw.js"></script>
+<script>
+    var slider = document.getElementById("brush-size");
+    var output = document.getElementById("bs-output");
+    output.innerHTML = slider.value; 
+    slider.oninput = function() {
+    output.innerHTML = this.value;
+    } 
+</script>
+</body>
+</html>

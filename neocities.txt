@@ -1,0 +1,204 @@
+A topical schematic to organize my mind. 
+
++ Index has blurbs and general links; each page may have own links also. 
++ Code needs more professional writing lol
+
++ tiny gallery of misc 
++ charmander 
++ cats 
+
+
+
+gallery addition candidates----
+2021: 
+2022: 
+2023: 
+2024: 
+
+
+photos!!! 
+
+refs-- 
+Lena 
+kate 
+nina 
+goth fox 
+minca 
+
+
+
+>>
+family tree and recipe stuff needs a blog, better to use blogspot? 
+
+-------------------------------------------
+Lighthouse scores! 
+- slow speed because still importing two Google fonts don't really need to, so cut that. 
+- forgot to have  lang="en-US" in html element on main page somehow! 
+  but all other access values are good! color contrast, alt in img, etc. 
+- SEO is all good except no meta tag? hmm. 
+  <meta name="description" content="Put your description here.">
+  also each page title needs to be distinct somehow. 
+- browser errors were logged to console. oh, it's a font error. idk how to fix that. 
+
+# OK so got lang in html, a vague but workable meta tag, and mostly just removed the font import. 
+speed went from 3 or 4 seconds to 1 second for first paint, 2.5 for largest 
+font download is only 40kb now. total is 283kb. 
+lowest overall score is 95%, highest is 99%. 
+performance 95% looks like it wants smaller images or WebP fuck that all my homies hate WebP. 
+access 100% 
+best practices 96% still console errors lol 
+SEO 100% 
+
+----
+Vague ideas- 
+? anime manga movies etc:: how can I make fave lists FUN? dynamic. a fancier chronology? a web type thing? faux image map? 
+
+
+Linux stuff? 
+Dragalia lost?? 
+
+? Neon frutiger crazy deco page 
+
+? central settings panel for colors etc.; font settings as well? 
+? play an audio file when click button! web audio api?? 
+
+
+
+
+---------------
+Games!? 
+2048- needs more work, all the js is a mess. 
+strip poker- would be amusing but lots of code. have transparent PNG to reveal naked Yata. 
+
+
+--------------------------
+more centering bullshit! for some reason on the OTHER project a simple text-align: center got the text and img to center in the page. 
+BUT in this one it only centered in it's own box!?!? 
+OHH is it becuase i put a max-width on the <p> element!? let's find out! 
+it appears so. though the image box is to the left BUT it's not finding an image. I am having issues with permissions on my own server!!!
+quick upload to imgur and see image now but it's still to the left! hmm. IDK! everything else is ok. 
+if this keeps up I'll have to go flexbox but first I need good refs. 
+I have a 1600px wide img now and that's kind of too big? 
+
+A HAH I did the obvious and used the web panel thing to turn things off- it's the display:block I have on all images! 
+honestly IDK why I had that other than I was copying a reset CSS but it had not caused an issue before. 
+probably because I've been using flex and grid to cetner things.
+
+
+https://codepen.io/wallas/pen/nRRKja this is cool skeumorphic if I can work out how. 
+
+
+It would be cool to have a rotated banner 
+.vertibird {
+    writing-mode: vertical-rl;
+}
+
+
+actual checkerboard: 
+
+.checkers {
+    background-image: repeating-conic-gradient(var(--bg1) 0% 25%, var(--bg2) 0% 50%);
+    background-size: var(--size) var(--size);
+}
+
+tilting it means adding a "from 45deg" at the start, we can make this a var like 
+--dangle: 0deg; 
+and then have the #box:checked routine, already tested. 
+note that playing around, anything other than "standard" angle may result in humorous results. 
+
+
+-----
+I was trying to use Yata colors cuz I did ages ago and it was mellow earthtones but omg. 
+
+this one is very 70s feeling, ugly and bold, lol. 
+:root:has(#earth1976:checked) {
+    color-scheme: light;
+    --ink: rgb(20, 20, 20); 
+    --paper: rgb(243, 243, 243); 
+    --bg1: rgb(70, 30, 3);
+    --bg2: rgb(235, 203, 114);
+    --border1: rgb(250, 190, 44);
+    --border2: rgb(59, 161, 68);
+}
+
+aiming for calmer colors but still not satisfied. 
+:root:has(#earth:checked) {
+    color-scheme: light;
+    --ink: rgb(20, 20, 20); 
+    --paper: rgb(243, 243, 243); 
+    --bg1: rgb(168, 128, 56);
+    --bg2: rgb(235, 203, 114);
+    --border1: rgb(250, 190, 44);
+    --border2: rgb(59, 161, 68);
+}
+
+went darker but it's even uglier somehow. 
+:root:has(#earth:checked) {
+    color-scheme: dark;
+    --ink: rgb(245, 244, 244);
+    --paper: rgb(27, 13, 1);
+    --bg1: rgb(70, 30, 3);
+    --bg2: rgb(85, 46, 14);
+    --border1: rgb(121, 96, 33);
+    --border2: rgb(59, 161, 68);
+}
+
+CMY + RGB = YRMBCG so yellow, red, magenta, blue, cyan, green 
+LITE: gold, fire, lilac, sky, sage
+DARK: mahogany, cherry, deep purple, navy, forest 
+
+
+:root:has(#color [value="gold"]:checked) {
+    --bg1: rgb(238, 215, 114);
+}
+
+:root:has(#color [value="fire"]:checked) {
+    --bg1: rgb(209, 20, 6);
+}
+
+:root:has(#color [value="amethyst"]:checked) {
+    --bg1: rgb(78, 39, 94);
+}
+
+:root:has(#color [value="minty"]:checked) {
+    --bg1: rgb(192, 214, 194);
+}
+
+
+/* So if we're on a phone, the width of the main is 100% and the cool background is invisible, so we don't need this. (I think!) */
+@media (width < 70ch) {
+    .bg-picker {
+        display: none;
+    }
+}
+
+---------------------
+this is the dropdown version
+
+    <label>Dark/Lite:
+        <select data-theme-picker name="themepicker" id="theme">
+            <option value="dark">Dark mode</option>
+            <option value="light">Light mode</option>
+        </select>
+    </label>
+
+:root:has(#theme [value="light"]:checked) {
+    color-scheme: light;
+    --bg1: rgb(40, 51, 80);
+    --ink: rgb(12, 12, 12);
+    --paper: rgb(240, 240, 240);
+    --muted: rgb(103, 118, 126);
+    --focus: rgb(123, 196, 211);
+}
+
+:root:has(#theme [value="dark"]:checked) {
+    color-scheme: dark;
+    --bg1: rgb(19, 27, 48);
+    --ink: rgb(244, 244, 244);
+    --paper: rgb(16, 16, 18);
+    --muted: rgb(35, 55, 66);
+    --focus: rgb(93, 177, 194);
+}
+
+
+

@@ -1,0 +1,99 @@
+@media (prefers-color-scheme: light){
+    :root {
+        --paper: hsl(0, 0, 96%);
+        --ink: hsl(0, 0%, 6%);
+    }
+}
+@media (prefers-color-scheme: dark){
+    :root {
+        --paper: hsl(0, 0%, 10%);
+        --ink: hsl(0, 0%, 95%);
+    }
+}
+
+/* this actually works lower down with the /form/ stuff but it's more organized this way */
+:root:has(#obsidian:checked) {
+    color-scheme: dark; 
+    --paper: hsl(0, 0%, 10%);
+    --ink: hsl(0, 0%, 95%);
+}
+
+:root:has(#light:checked) {
+    color-scheme: light;
+    --paper: hsl(0, 0, 96%);
+    --ink: hsl(0, 0%, 6%);
+}
+
+html {
+    color: var(--ink);
+	font-size: 1rem;
+    font-family: 'IBM Plex Serif', serif;
+    color-scheme: dark light;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--paper);
+    font-size: 1.1em;
+    line-height: 1.5; 
+}
+
+.page-header {
+    margin-bottom: 3em;
+    text-align: center;
+}
+
+.tamedots {
+    display: flex;
+    align-items: stretch; 
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3em;
+}
+
+.page-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(24ch, 1fr));
+    gap: 2em;
+    margin-bottom: 8em;
+}
+
+h1, 
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-wrap: balance; 
+}
+
+img, 
+picture, 
+svg, 
+video {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+
+p {
+    font-variant-numeric: oldstyle-nums;
+    text-align: justify;
+}
+
+fieldset {
+    border: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit; 
+    margin: 0; 
+    color: currentColor;
+    cursor: pointer;
+}
+

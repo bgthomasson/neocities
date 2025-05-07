@@ -1,0 +1,213 @@
+/* Variables have to go at the top. 
+ *---------------------------------------------------------------------------- 
+*/
+:root {
+    --bg1: rgb(88, 104, 148);
+    --ink: rgb(12, 12, 12);
+    --paper: rgb(240, 240, 240);
+    --muted: rgb(97, 127, 187);
+    --focus: rgb(123, 196, 211);
+    --font-sans: Cantarell, 'Noto Sans', 'Open Sans', sans-serif;
+    --font-serif: 'IBM Plex Serif', Merriweather, Cambria, Georgia, serif;
+    --font-monospace: 'Oxygen Mono', Consolas, 'Courier New', Courier, monospace;
+}
+
+@media (prefers-color-scheme: dark){
+    :root {
+        --bg1: rgb(19, 27, 48);
+        --ink: rgb(244, 244, 244);
+        --paper: rgb(16, 16, 18);
+        --muted: rgb(35, 55, 66);
+        --focus: rgb(93, 177, 194);
+    }
+}
+
+:root:has(#light:checked) {
+    color-scheme: light;
+    --bg1: rgb(88, 104, 148);
+    --ink: rgb(12, 12, 12);
+    --paper: rgb(240, 240, 240);
+    --muted: rgb(95, 127, 187);
+    --focus: rgb(123, 196, 211);
+}
+
+:root:has(#dark:checked) {
+    color-scheme: dark;
+    --bg1: rgb(19, 27, 48);
+    --ink: rgb(244, 244, 244);
+    --paper: rgb(16, 16, 18);
+    --muted: rgb(35, 55, 66);
+    --focus: rgb(93, 177, 194);
+}
+
+/* Default elements, simple styles 
+ * ---------------------------------------------------------------------------- 
+*/
+
+html {
+    font-size: 1rem;
+}
+
+body {
+    background-color: var(--bg1);
+    font-family: var(--font-sans);
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin: 0%; /* this has no effect on the centering I'm using, it's just to make the header stick to the edges, lol.*/
+}
+
+article {
+    background-color: var(--paper);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+}
+
+img,
+picture,
+svg,
+video {
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+
+blockquote {
+    margin: 0;
+    padding: 0 2em;
+    border: 4px dashed var(--focus);
+}
+
+fieldset {
+    border: 2px solid var(--muted);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit; 
+    margin: 0; 
+}
+
+table {
+    background-color: var(--paper);
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid var(--muted);
+    padding: 0.5em;
+    text-align: left;
+}
+
+
+/* Custom styles go down here I guess
+ *----------------------------------------------------------------------------
+*/
+/* If I'm just gonna have the h1 and form, making it a column is simplest code. 
+* Of course if this goes on say a WP site or anything with a sidebar the picker could go there. 
+* Or I can drop it, I'm kind of iffy on needing it. BUT for this test I'll need it. 
+*/
+.page-header {
+    background-color: var(--paper);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tamedots {
+    display: flex;
+    align-items: stretch; 
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+/* for lengthy text etc it's nice to contain things for readability */
+.centered {
+    width: min(70ch, 100%);
+    margin-inline: auto;
+    padding: 8px 16px 32px 16px;
+}
+
+/* for the trees we need as much horizontal space as the screen has! */
+.spanner1 {
+    border: 3px solid var(--muted);
+    padding: 32px 0px;
+}
+
+.generation1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+}
+
+/* and we make some basic cards like we'd do for a blog or product info or whatever, make it pretty */
+.card1 {
+    background-color: var(--paper);
+    border: 1px solid var(--muted);
+    border-radius: 12px;
+    padding: .5em 1em;
+}
+
+.spanner2 {
+    border: 2px solid var(--muted);
+    padding: 32px 0px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* plain basic use, just have to be sure you keep track of how many- 3 or 4 is most likely tho. */
+}
+
+.generation2 {
+    display: flex;
+    flex-direction: column; /* stack the contents verically */
+    align-items: center;
+    justify-content: space-around; /* alignment along the MAIN axis which is now vertical */
+    gap: 8px;
+}
+
+.spanner3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    max-width: max-content;
+    margin-inline: auto;
+}
+
+.spanner4 {
+    padding: 32px 6px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+}
+
+.generation5 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 12px;
+}
+
+.person { 
+    height: 100%;
+}
+.parents {
+    height: calc(50% - 12px);
+}
+
+.grandparents {
+    height: calc(25% - 12px);
+}
+
+.ggp {
+    height: calc(12.5% - 12px);
+}
+

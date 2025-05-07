@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US"> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="color-scheme" content="dark light" />
+    <title>Silly Code</title>
+    <link rel="stylesheet" type="text/css" media="all" href="neocity.css" />
+</head>
+<body class="cubes">
+<header class="page-header">
+    <h1 class="fancy-title">Code for possible fun and doubtful profit</h1>
+    <form class="formbox">
+        <fieldset class="tamedots">
+            <legend>Color:</legend>
+            <div><label for="light">Light </label><input type="radio" name="palette" id="light"></div>
+            <div><label for="fire">Fire </label><input type="radio" name="palette" id="fire"></div>
+            <div><label for="sage">Sage </label><input type="radio" name="palette" id="sage"></div>
+            <div><label for="sky">Sky </label><input type="radio" name="palette" id="sky"></div>
+            <div><label for="amethyst">Amethyst </label><input type="radio" name="palette" id="amethyst"></div>
+            <div><label for="obsidian">Obsidian </label><input type="radio" name="palette" id="obsidian"></div>
+        </fieldset>
+    </form>
+</header>
+<main class="center-inline">
+    <article>
+        <h2>Toggle colors and stuff!</h2>
+        <p>
+            <a href="https://youtu.be/zFFuV_vXNhY?si=29r0aHG_Zbq0V33D">Dark theme toggle</a> 
+            I started with, and then 
+            <a href="https://youtu.be/fyuao3G-2qg?si=3x4HHq_1UaB3eZCG">this other one</a> 
+            was useful. 
+            I used some of the "<a href="https://anthonyhobday.com/sideprojects/saferules/">safe rules</a>" like desaturated colors instead of pure black/white. 
+            I tested having light and dark modes apart from the main palettes but certain ones just worked better either way so I combined light/dark into each. 
+            There was just too much contrast with some of them, had a glare. 
+            Honestly to be practical there should be 4 at most, but I was aiming for ROYGBIV plus white and black. 
+            Note that yellow can be hard to work with, a yellow that isn't fully saturated just looks dingy and dirty. 
+        </p>
+        <p>
+            For the patterns, the squares came from one on <a href="https://projects.verou.me/css3patterns/">here</a> like a decade ago and evolved into that. 
+            For the stars I just took <a href="https://css-pattern.com/stars/">this</a> since there's math. 
+            And from there also <a href="https://css-pattern.com/cubes-illusion/">cubes</a> looked good. 
+            The main page is based on <a href="https://css-tricks.com/css-tricks-that-use-only-one-gradient/">an example here</a> 
+        </p>
+        <p>
+            I need the picker in the header? or a sidebar? or flyout menu!?!? 
+        </p>
+    </article>
+    <article>
+        <h2>Centering shenanigans</h2>
+        <p>
+            You can't beat old "margin zero auto" to center things 100% of the time, no worries about wrappers or boxes, just THIS THING will be in the center. 
+            Other stuff may be broken on IE6 or whatever, but it's in the middle gosh darn it. And all you have to do is slap "center-margin" on the /main/. 
+            If you want something newer, or don't want the margin to be zero, there's "margin-inline" which is in all major browsers since 2021. 
+            Note that here I'm keeping in mind my /p/ tag has a max-width and there's a margin inside each /article/ to add in. 
+        </p>
+        <pre>
+            <code>
+.center-margin {
+    margin: 0 auto;
+    max-width: 70em;
+}
+
+.center-inline {
+    width: min(70em, 100%);
+    margin-inline: auto;
+}
+            </code>
+        </pre>
+        <p>
+            Using flexbox or grid is possible, BUT! it applies to items inside, not the box itself, so like here I have the header at 100% width of the page just because. 
+            Put "center-grid" on the /main/ and it just sits on the left side. Put it on /body/ and we shrink the /header/ as well. 
+            Wrapping /main/ in a /div/ puts us on the path to div soup. 
+            Of course, if you are using grid, then you could put the header as a sidebar when the page is over 800px or whatever. 
+            I have several test pages like that, experimenting with sticky positioning etc. so I'm saving grid positioning for when I use it all over. 
+        </p>
+    </article>
+    <article>
+        <h2>Fonts!</h2>
+        <p>
+            Very important on a personal site. 
+            For the main body text i decided sans serif would work best, and the Noto family is good, even if I don't expect to use odd characters. 
+            For monospace I went with Fira Code to start, I've been using it in command line. 
+            For serif, Source. 
+            However, I like the other fonts in the Source family and choice #2 is to simply use Source family for all of them. 
+            That would be harmonious but hardly quirky. 
+            On top of that I want to self host, more private and practical. 
+            Dig through <a href="https://www.fontsquirrel.com/fonts/list/find_fonts?filter%5Blicense%5D%5B0%5D=web">here</a> to start. 
+            In fact it's a good time to also make some css for list styling. 
+        </p>
+        <ul>
+            <li><a href="https://www.fontsquirrel.com/fonts/1942-report">amusing for X Files</a></li>
+            <li>Anonymous, maybe</li>
+            <li>Atomic Age, nice retro</li>
+            <li>Baloo, maybe too soft</li>
+            <li>Calligraffiti, nice.</li>
+            <li>Henry Morgan Hand is perfect for any pirate themed site.</li>
+            <li>Hornswoggled has character but a little too kiddie</li>
+            <li>Libre Baskerville and Caslon are both good dignified choices</li>
+        </ul>
+        <p>
+            It took some work to find ones that I can self host with license but <a href="https://www.fontsquirrel.com/fonts/calligraffiti">Calligraffiti</a> works. 
+            It's script that is legible and "grown up" enough. I like "rock salt" also but it's a little too messy. 
+        </p>
+    </article>
+    <section class="autocount">
+        <h2 class="section-title">Useful links, for me at least</h2>
+        <article>
+            <h2 class="biglink"><a href="https://developer.mozilla.org/en-US/docs/Web">Mozdev refs</a></h2>
+            <p>Essential basic references for HTML, CSS, etc.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://css-tricks.com/">CSS tricks</a></h2>
+            <p>Plenty of useful examples.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://www.colorhexa.com/">colorhexa</a></h2>
+            <p>I like this color ref site, you can type in the RGB or whatever, it has color schemes, plus it has color blind visualizer.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://www.htmhell.dev/">HTMHELL</a></h2>
+            <p>Knowing what not to do is important.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://practicaltypography.com/">Practical Typography</a></h2>
+            <p>my family ran a small town newspaper for 80 years so I may have an inclination for this sort of thing.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://www.fontsquirrel.com/">font squirrel</a></h2>
+            <p>I know Google fonts is the big boy but I like the little site for things to play with on my own computer.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://phptherightway.com/">PHP the right way</a></h2>
+            <p>the hard way is easy.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://inventwithpython.com/">invent with Python</a></h2>
+            <p>Lots of useful Python projects.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://youmightnotneedjquery.com/">you might not need jquery</a></h2>
+            <p>for simple things it's highly doubtful you do.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://js1k.com/">JS1K</a></h2>
+            <p>a code golfing competition.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://rogerdudler.github.io/git-guide/">GIT guide</a></h2>
+            <p>arcane sorcery.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://www.techdirt.com/">Techdirt</a></h2>
+            <h2 class="biglink"><a href="https://www.joelonsoftware.com/">Joel on software</a></h2>
+            <h2 class="biglink"><a href="https://krebsonsecurity.com/">Krebs</a></h2>
+            <h2 class="biglink"><a href="https://www.schneier.com/">Schneier</a></h2>
+            <p>just some basic news and such.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://docs.fedoraproject.org/en-US/quick-docs/upgrading-fedora-offline/">upgrading Fedora</a></h2>
+            <p>I use Fedora btw.</p>
+        </article>
+        <article>
+            <h2 class="biglink"><a href="https://www.commandlinefu.com/commands/browse">command line fu</a></h2>
+            <p>put on your wizard hat.</p>
+        </article>
+    </section>
+</main>
+<footer class="page-footer">
+    <nav class="bottomnav">
+        <p class="littlelink"><a href="index.html">Home</a></p>
+        <p class="littlelink"><a href="links.html">Fun and Games</a></p>
+        <p class="littlelink"><a href="gallery.html">Tiny Gallery</a></p>
+    </nav>
+</footer>
+</body>
+</html>

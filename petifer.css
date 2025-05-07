@@ -1,0 +1,208 @@
+/* Variables ----------------------------------------------------------------- */
+:root {
+    --bg1: rgb(88, 104, 148);
+    --ink: rgb(12, 12, 12);
+    --paper: rgb(240, 240, 240);
+    --paper2: rgb(225, 225, 225);
+    --muted: rgb(97, 127, 187);
+    --focus: rgb(123, 196, 211);
+    --hiliter: rgb(253, 255, 154);
+    --font-sans: Cantarell, 'Noto Sans', 'Open Sans', sans-serif;
+    --font-serif: 'IBM Plex Serif', Merriweather, Cambria, Georgia, serif;
+    --font-monospace: 'Oxygen Mono', Consolas, 'Courier New', Courier, monospace;
+}
+
+@media (prefers-color-scheme: dark){
+    :root {
+        --bg1: rgb(19, 27, 48);
+        --ink: rgb(244, 244, 244);
+        --paper: rgb(16, 16, 18);
+        --paper2: rgb(26, 26, 28);
+        --muted: rgb(35, 55, 66);
+        --focus: rgb(93, 177, 194);
+        --hiliter: rgb(54, 59, 3);
+    }
+}
+
+:root:has(#light:checked) {
+    color-scheme: light;
+    --bg1: rgb(88, 104, 148);
+    --ink: rgb(12, 12, 12);
+    --paper: rgb(240, 240, 240);
+    --paper2: rgb(225, 225, 225);
+    --muted: rgb(95, 127, 187);
+    --focus: rgb(123, 196, 211);
+    --hiliter: rgb(240, 243, 79);
+}
+
+:root:has(#dark:checked) {
+    color-scheme: dark;
+    --bg1: rgb(19, 27, 48);
+    --ink: rgb(244, 244, 244);
+    --paper: rgb(16, 16, 18);
+    --paper2: rgb(26, 26, 28);
+    --muted: rgb(35, 55, 66);
+    --focus: rgb(93, 177, 194);
+    --hiliter: rgb(54, 59, 3);
+}
+
+/* Default elements, simple styles ------------------------------------------ */
+
+html {
+    font-size: 1rem;
+}
+
+body {
+    background-color: var(--bg1);
+    font-family: var(--font-sans);
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin: 0%; 
+}
+
+article {
+    background-color: var(--paper);
+    padding: 4px 16px;
+    margin-bottom: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+}
+
+img,
+picture,
+svg,
+video {
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+
+blockquote {
+    margin: 0;
+    padding: 0 2em;
+    border: 4px dashed var(--focus);
+}
+
+fieldset {
+    border: 2px solid var(--muted);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit; 
+    margin: 0; 
+}
+
+table {
+    background-color: var(--paper);
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+
+td,
+th {
+    border: 1px solid var(--muted);
+    padding: 0.5em;
+    text-align: left;
+}
+
+td:hover {
+    background-color: var(--hiliter);
+}
+
+tbody tr:nth-child(odd) {
+    background: var(--paper2);
+}
+
+ol, ul {
+    padding: 0;
+    list-style-position: inside;
+}
+
+
+/* Custom styles ----------------------------------------------------------- */
+
+.page-header {
+    background-color: var(--paper);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tamedots {
+    display: flex;
+    align-items: stretch; 
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.centered {
+    width: min(70ch, 100%);
+    margin-inline: auto;
+}
+
+.spanner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    margin-bottom: 16px;
+}
+
+.generation {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 12px;
+}
+
+.card1 {
+    background-color: var(--paper);
+    border: 1px solid var(--muted);
+    border-radius: 12px;
+    padding: .5em 1em;
+}
+
+.person { 
+    height: 100%;
+}
+
+.parent {
+    height: calc(50% - 12px);
+}
+
+.grandparent {
+    height: calc(25% - 12px);
+}
+
+.page-footer {
+    margin-top: 64px;
+    padding: 24px 0;
+    background-color: var(--paper);
+    container-name: navbox;
+    container-type: inline-size;
+}
+
+.bottomnav {
+    display: flex;
+    align-items: center; 
+    gap: 3em;
+    flex-direction: column; 
+
+    @container navbox (width > 66em) {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
