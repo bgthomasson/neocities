@@ -1,0 +1,8 @@
+*.sql
+*.sqlite
+
+# these folders are too big or not needed to backup on github 
+fonts/
+img/
+refs/
+7.css-main/
