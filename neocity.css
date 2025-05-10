@@ -197,6 +197,11 @@ body {
     background-size: var(--pattern-size) var(--pattern-size);
 }
 
+.checkersmall {
+    background-image: linear-gradient(90deg, var(--bg2) 50%, transparent 50%), linear-gradient(var(--bg2) 50%, transparent 50%);
+    background-size: 8px 8px;
+}
+
 .kaleido {
     background-image: repeating-conic-gradient(var(--bg1) 0 var(--percent1), var(--bg2) 0 var(--percent2));
     background-size: var(--pattern-size) var(--pattern-size);
@@ -287,6 +292,11 @@ main {
     /* max-inline-size has 95% support, along with padding-inline */
     /* width: min(70em, 100%); */
     max-inline-size: 70em;
+    margin-inline: auto;
+}
+/* this one is meant for images mostly, specifically in the gallery; the widest should be 1280px */
+.center-images {
+    width: min(calc(1300px + 2em), 100%);
     margin-inline: auto;
 }
 
