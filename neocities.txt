@@ -2,25 +2,19 @@ A topical schematic to organize my mind.
 
 + Index 
 + Code needs more professional writing lol
++ cats - needs a masonry type? not sure best way to organize random sizes. 
++ photos?
 
-+ tiny gallery of misc - leave it with just the 512px stuff and link to "big" gallery
-+ cats 
-
-
-
-photos!!! 
-
-refs-- 
-Lena 
-kate 
-nina 
-goth fox 
-minca 
-
++ newspaper idea: do history of PCC and maybe have JS style switch for eras like Victorian, hippie, frutiger. 
+? is it possible for the css switching to also hide/show different elements? 
 
 
 >>
 family tree and recipe stuff needs a blog, better to use blogspot? 
+it seems like every time I try to do something local some SE Linux bullshit or build error or some damn thing happens. 
+
+
+
 
 -------------------------------------------
 Lighthouse scores! 
