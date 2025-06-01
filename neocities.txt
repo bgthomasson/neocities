@@ -1,9 +1,32 @@
 A topical schematic to organize my mind. 
 
 + Index 
-+ Code needs more professional writing lol
++ UPDATE links! 
++ Code needs more professional writing lol ALSO! font license info. 
 + cats - needs a masonry type? not sure best way to organize random sizes. 
-+ photos?
+
++ pronk! 1999 inspired but use newer code. 
+need color palette and font! bold colors. like this https://twovolt.neocities.org/ 
+I forgot https://mw.rat.bz/colors/ is retro CRT but there are some cromulent pallettes here. 
+maybe a dark theme? green or amber text? a green that isn't too yellow neon? 
+
+amber: 
+Foreground Dark..: #AA4400 
+Foreground Normal: #CC9900 
+Foreground Light.: #FFCC00 
+Background: #141704 
+
+Jade Green  
+Foreground: #29FF48 
+Background: #1E1F0F 
+
+for header font "Alpha Echo" is close enough and totally free!!! 
+# news, music, members, photos, [merch, tour dates] 
+# bandcamp, facebutt, instaspam, yutoube 
+
+I'm thinking just having some imaginary local live show announcements and links to buy music and some lyrics down below. 
+lots of teh sites I see are fairly basic. 
+IF it's just two items then do a 2 col layout with flex and size change? 
 
 + newspaper idea: do history of PCC and maybe have JS style switch for eras like Victorian, hippie, frutiger. 
 ? is it possible for the css switching to also hide/show different elements? 
@@ -185,6 +208,13 @@ this is the dropdown version
     --muted: rgb(35, 55, 66);
     --focus: rgb(93, 177, 194);
 }
+
+==============
+
+| Arctic White
+| Foreground: #BABABA  
+| Background: #3F3F3F 
+
 
 
 

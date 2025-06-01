@@ -207,15 +207,17 @@ body {
     background-size: var(--pattern-size) var(--pattern-size);
 }
 
-/* the others I made playing around with tutorials but this one I yanked from css-pattern.com to edit */
+/* the others I made playing around with tutorials but this one I yanked from css-pattern.com to edit 
+ * May: swapped colors so stars are lighter than "sky"! 
+*/
 .stars {
     --d: calc(var(--pattern-size)/10);  /* control the gap between stars */
-    --_g: var(--bg1) 36deg, #0000 0;
+    --_g: var(--bg2) 36deg, #0000 0;
     background:
       conic-gradient(from 162deg at calc(var(--pattern-size) * .5)  calc(var(--pattern-size) * .68), var(--_g)),
       conic-gradient(from 18deg  at calc(var(--pattern-size) * .19) calc(var(--pattern-size) * .59), var(--_g)),
       conic-gradient(from 306deg at calc(var(--pattern-size) * .81) calc(var(--pattern-size) * .59), var(--_g)),
-      var(--bg2);
+      var(--bg1);
     background-position: 0 calc(var(--pattern-size) * 0.35);
     background-size: calc(var(--pattern-size) + var(--d)) calc(var(--pattern-size) + var(--d));
 }
