@@ -1,9 +1,8 @@
 A topical schematic to organize my mind. 
 
 + Index 
-+ UPDATE links! 
++ UPDATE links! more! more! 
 + Code needs more professional writing lol ALSO! font license info. 
-+ cats - needs a masonry type? not sure best way to organize random sizes. 
 
 + pronk! 1999 inspired but use newer code. 
 need color palette and font! bold colors. like this https://twovolt.neocities.org/ 
@@ -27,8 +26,13 @@ for header font "Alpha Echo" is close enough and totally free!!!
 I'm thinking just having some imaginary local live show announcements and links to buy music and some lyrics down below. 
 lots of teh sites I see are fairly basic. 
 IF it's just two items then do a 2 col layout with flex and size change? 
+! images: use clip-path to do fancy things!!! https://css-tricks.com/tag/clip-path/ 
+> need a logo, maybe pixel mini and SVG big? 
+> less flat, more shadows? 
 
-+ newspaper idea: do history of PCC and maybe have JS style switch for eras like Victorian, hippie, frutiger. 
+
+----------------------
++ newspaper idea: do history of PCC and maybe have JS style switch for eras like Victorian 1899, hippie 1969, frutiger 2009. 
 ? is it possible for the css switching to also hide/show different elements? 
 
 
