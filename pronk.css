@@ -1,17 +1,17 @@
 /* PRONK! */
 
 :root {
-    --paper1: rgb(19, 22, 4);
-    --paper2: rgb(30, 31, 15);
-    --orange: rgb(168, 67, 0);
-    --amber: rgb(204, 153, 0);
-    --lemon: rgb(255, 204, 0);
-    --jade: rgb(41, 255, 73); 
-    --snow: rgb(250,250,250);
+    --paper1: rgb(19 22 4);
+    --paper2: rgb(30 31 15);
+    --orange: rgb(168 67 0);
+    --amber: rgb(204 153 0);
+    --lemon: rgb(255 204 0);
+    --jade: rgb(41 255 73); 
+    --snow: rgb(250 250 250);
 
     --font-sans: Cantarell, 'Noto Sans', sans-serif;
     --font-serif: 'IBM Plex Serif', Merriweather, serif;
-    --font-mono: 'Oxygen Mono', 'Fira Code', Consolas, monospace; 
+    --font-mono: 'Fira Code', Consolas, monospace; 
     --font-script: Calligraffiti, script; 
 
     --size: 48px;
@@ -19,33 +19,30 @@
 
 html {
 	font-size: 1rem;
-    font-family: var(--font-sans);
+    font-family: var(--font-mono);
 }
 
 body {
     background-color: var(--paper1);
+    color: var(--snow);
     line-height: 1.5; 
-    margin: 0; 
     text-align: center;
-  
-  
-  /* 
-  * I Like this one EXCEPT I realize any pattern bg will cause tangents with floating boxes. 
-    Putting a bg color on the main will clean up some but THEN it has edges to deal with etc.
-    In fact any design may be better just put into a side column or something ??
-  
-    background:
-      conic-gradient(from -45deg,var(--paper1) 90deg,#0000 0 180deg,var(--paper2) 0 270deg,#0000 0) 0 calc(var(--size)/2)/var(--size) var(--size),    
-      conic-gradient(from 135deg at 50% 0,var(--paper1) 90deg,var(--paper2) 0) 0 0/calc(2*var(--size)) var(--size); 
-    */
 }
 
 /* basic layout ============================================================== */
-.page-header {
-    margin-bottom: 3em;
-    background-color: var(--paper2);
-    border: 1px solid var(--jade);
+.page-header,
+.page-footer {
+    border: 1px solid var(--amber);
+    border-radius: 12px;
+    box-shadow: inset 0 0 16px 0 var(--amber), 0 0 16px 0 var(--amber);
     text-transform: uppercase;
+}
+.page-header > h1 {
+    font-size: 4em;
+}
+
+main { 
+    margin: 42px 0;
 }
 
 .center-inline {
@@ -54,38 +51,37 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1em;
-    /* since we are applying it to the main which is the container, we just swap in "media"  */
-    @media screen and (width > 71em) {
+    @media screen and (width > 60em) {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 .page-footer {
-    margin: 4em 0;
-    background-color: var(--paper2);
+    padding: 64px 0;
+    display: flex;
+    align-items: center; 
+    gap: 1em;
+    flex-direction: column; 
+
+    @media screen and (width > 600px) {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 }
 
 
-/* basic vanilla tags ====================================================== */
+/* basic inline tags ====================================================== */
 article {
-    background-color: var(--paper1);
-    border: 1px dashed var(--jade);
-    color: var(--snow);
     padding: 1em;
     margin-bottom: 3em;
 }
 
-h1, 
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-script);
     text-wrap: balance; 
     color: var(--lemon);
 }
-
 
 img, 
 picture, 
@@ -97,9 +93,58 @@ video {
 }
 
 .lyrics {
-    font-family: var(--font-mono);
     max-width: 64ch;
     margin: auto;
 }
 
+.littlelink {
+    border: 2px solid var(--amber);
+    border-radius: 12px;
+    padding: .5em;
+}
+.littlelink:hover {
+    border-color: var(--jade);
+}
 
+/* patterns for backgrounds or whatever, will get messy as experiment! ------ */
+
+.pattern1 {
+    background:
+      conic-gradient(from -45deg,var(--paper1) 90deg,#0000 0 180deg,var(--paper2) 0 270deg,#0000 0) 0 calc(var(--size)/2)/var(--size) var(--size),    
+      conic-gradient(from 135deg at 50% 0,var(--paper1) 90deg,var(--paper2) 0) 0 0/calc(2*var(--size)) var(--size); 
+}
+
+/* borders and such 
+ * Green on black is a classic but looks too X Files to only use it, lol. 
+ * Amber is good but not sure if want just it, mixing with green might contrast too much tho. 
+ * Orange is probably too dark for a "glow" esp if mixing in the other colors, not enough contrast with bg. 
+ * ! let's test using the from() func instead of typing out the whole color again!!
+*/
+.dash-jade {
+    border: 1px dashed var(--jade);
+}
+
+.aura-amber {
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgb(from var(--amber) r g b / 0.66), 0 0 24px rgb(from var(--amber) r g b / 0.33);
+}
+
+.aura-lemon {
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgb(from var(--lemon) r g b / 0.66), 0 0 24px rgb(from var(--lemon) r g b / 0.33);
+}
+
+.aura-jade {
+    box-shadow: 0 0 12px rgb(from var(--jade) r g b / 0.35), 0 0 24px rgb(from var(--jade) r g b / 0.18);
+}
+
+/* trying out some fun image things */
+
+.rounding {
+    clip-path: circle(50% at 50% 50%);
+}
+
+/* Rotation it turns out requires remembering that a diagonal is longer thatn width or height and results in overflow mayhem! */
+.rotater {
+    rotate: 45deg;
+}
